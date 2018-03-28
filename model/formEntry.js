@@ -7,4 +7,4 @@ var FormEntrySchema = new Schema({
   company: String,
   tos: Boolean
 });
-module.exports = mongoose.model('formEntry', FormEntrySchema);
+module.exports = mongoose.model('FormEntry', FormEntrySchema);
