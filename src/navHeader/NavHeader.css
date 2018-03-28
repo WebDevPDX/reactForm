@@ -1,0 +1,28 @@
+.nav_wrapper {
+    width: 480px;
+    background-color: #1e88e5;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin-bottom: 30px;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    flex-grow: 1;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    letter-spacing: 0.2em;
+    text-decoration: none;
+}
+
+.active {
+    color: #0d47a1;
+    font-weight: bold;
+}

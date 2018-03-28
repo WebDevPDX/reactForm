@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom';
 
-import NavHeader from './NavHeader';
-import FormStep from './steps/FormStep'
-import ReviewStep from './steps/ReviewStep'
-import FinalStep from './steps/FinalStep'
+import NavHeader from '../navHeader/NavHeader';
+import FormStep from '../steps/FormStep';
+import ReviewStep from '../steps/ReviewStep';
+import FinalStep from '../steps/FinalStep';
+
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +30,7 @@ class App extends Component {
     const props = Object.assign({ handleChange: this.handleChange }, this.state)
 
     return (
-      <div>
+      <div className="app-wrapper">
         <NavHeader step={this.state.step}/>
         <Switch>
           <Route path='/form' render={() => <FormStep {...props} />} />

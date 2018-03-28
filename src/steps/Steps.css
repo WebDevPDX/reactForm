@@ -1,0 +1,62 @@
+.steps-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+}
+
+label {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    line-height: 2.5em;
+    width: 320px;
+    margin-bottom: 40px;
+    font-size: 1em;
+}
+
+.name-label, .company-label {
+    border-bottom: 1px solid #616161;
+}
+
+.tos-label {
+    flex-flow: row;
+    align-items: center;
+}
+
+.name-input, .company-input {
+    border: none;
+    background-color: #e0e0e0;
+    flex-grow: 1;
+    font-size: 1.3em;
+    letter-spacing: 0.2em;
+}
+
+.tos-input {
+    font-size: 1.3em;
+}
+
+.button-wrapper {
+    position: absolute;
+    width: 320px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    bottom: 50px;
+}
+
+.button-wrapper-right {
+    flex-flow: row-reverse;
+}
+
+.button {
+    color: #616161;
+    background-color: #eee;
+    padding: 15px 20px;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.button:hover {
+    font-weight: bold;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

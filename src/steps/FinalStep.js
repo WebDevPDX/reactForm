@@ -1,20 +1,22 @@
-import React from 'react'
+import React from 'react';
+
+import './Steps.css';
 
 const FinalStep = (props) => (
-  <form>
-    <label>
+  <form className="steps-form final-step">
+    <label className="name-label">
       Name:
-      <input type="text" name="name" disabled value={props.name}/>
+      <input className="name-input" type="text" name="name" disabled value={props.name}/>
     </label>
-    <label>
+    <label className="company-label">
       Company:
-      <input type="text" name="company" disabled value={props.company}/>
+      <input className="company-input" type="text" name="company" disabled value={props.company}/>
     </label>
-    <label>
+    <label className="tos-label">
       I agree to the terms of service
-      <input type="checkbox" name="tos" disabled checked={props.tos}/>
+      <input className="tos-input" type="checkbox" name="tos" disabled checked={props.tos}/>
     </label>
   </form>
-)
+);
 
 export default FinalStep
