@@ -1,46 +1,41 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom'
 
 import NavHeader from './NavHeader';
-import Inputs from './Inputs';
+import FormStep from './steps/FormStep'
+import ReviewStep from './steps/ReviewStep'
+import FinalStep from './steps/FinalStep'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      entry: {
-        name: '',
-        company: '',
-        tos: null
-      },
-      form: 'STEP1'
+      name: '',
+      company: '',
+      tos: false
     };
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  handleNext() {
-    console.log('called', this.state.form);
-    const currentStep = this.state.form;
-    let nextStep = '';
-    switch (currentStep) {
-      case 'STEP1':
-        nextStep = 'STEP2';
-        break;
-      case 'STEP2':
-        nextStep = 'STEP3';
-        break;
-      case 'STEP3':
-        nextStep = 'STEP3';
-        break;
-      default:
-        nextStep = 'STEP1';
-    }
-    this.setState({ form: nextStep })
+  handleChange(event) {
+    console.log(event.target.name, {a: event.target});
+    this.setState({
+      [event.target.name]:
+        event.target.type === 'checkbox' ? event.target.checked : event.target.value })
   }
 
   render() {
+    const props = Object.assign({ handleChange: this.handleChange }, this.state)
+
     return (
       <div>
         <NavHeader step={this.state.step}/>
-        <Inputs entry={this.state.entry} handleNext={() => this.handleNext()}/>
+        <Switch>
+          <Route path='/form' render={() => <FormStep {...props} />} />
+          <Route path='/review' render={() => <ReviewStep {...props} />} />
+          <Route path='/final' render={() => <FinalStep {...props} />} />
+          <Route component={FormStep} />
+        </Switch>
       </div>
     )
   }
