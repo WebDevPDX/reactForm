@@ -1,0 +1,1 @@
+to run both server and FE app: npm run start-dev
